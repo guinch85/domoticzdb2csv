@@ -1,3 +1,7 @@
+domoticz.db
+.idea
+package-lock.json
+
 # Logs
 logs
 *.log
