@@ -1,12 +1,32 @@
-var sq = require('sqlite3');
+let config = require('./config');
+let sq = require('sqlite3');
+let jsonExport = require('jsonexport');
+const fs = require('fs');
+
 sq.verbose();
+let db = new sq.Database(config.dbfile);
 
-var db = new sq.Database(__dirname + '/touslesmessages.db3');
+let query = "";
+for (let i = 0; i < config.listIdx.length; i++) {
+    if (i > 0) query += " OR";
+    query += " DeviceRowId=" + config.listIdx[i];
+}
 
-db.each("SELECT * FROM message", function(err, row) {
+// console.log(query);
+
+db.all("SELECT * FROM Meter where" + query, function (err, rows) {
     if (err) {
         console.log(err);
     } else {
-        console.log(row.nom + " a écrit '" + row.content + "'");
+        jsonExport(rows, (err, csv) => {
+            if (err) return console.log(err);
+            // console.log(csv);
+            fs.writeFile('./export/' + config.csvFileName, csv, (err) => {
+                // throws an error, you could also catch it here
+                if (err) throw err;
+                // success case, the file was saved
+                console.log('CSV saved!');
+            });
+        })
     }
 });
