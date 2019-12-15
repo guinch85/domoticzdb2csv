@@ -55,3 +55,5 @@ let start = function () {
     });
     setTimeout(start, 3600000);
 };
+
+start();
