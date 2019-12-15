@@ -1,0 +1,1 @@
+# domoticzdb2csv
