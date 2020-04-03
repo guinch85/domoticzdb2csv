@@ -50,6 +50,18 @@ let start = function () {
                     // success case, the file was saved
                     console.log("CSV Temp saved!");
                 });
+            });
+
+            // console.log(rows);
+            for(let i in rows){
+                let id = rows[i].DeviceRowID;
+                // console.log(rows[i].DeviceRowID);
+                rows[i].DeviceRowID = id + '_Hr';
+            }
+            // console.log(rows);
+            jsonExport(rows, (err, csv) => {
+                if (err) return console.log(err);
+                // console.log(csv);
                 fs.writeFile('./export/' + config.csvHygroFileName, csv, (err) => {
                     // throws an error, you could also catch it here
                     if (err) throw err;
