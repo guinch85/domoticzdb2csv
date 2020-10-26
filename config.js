@@ -4,7 +4,9 @@ let csvMeterFileName = "domoticzMeterExport.csv";
 let csvTempFileName = "domoticzTempExport.csv";
 let csvHygroFileName = "domoticzHygroExport.csv";
 let listIdxMeter = [125, 126, 127];
-let listIdxTemp = [458, 460, 484, 556, 546, 547, 553, 554];
+
+let listIdxTemp = [458, 460, 484, 546, 547, 553, 556, 924];
+// Extérieure, Salle de bain, Chambre 1, Chambre 2, Salon, Cuisine, Garage, Bureau
 
 module.exports = {
     dbfile,
