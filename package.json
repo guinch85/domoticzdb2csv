@@ -1,6 +1,6 @@
 {
   "name": "domoticzdb2csv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sqlite3": "^5.0.1",
+    "sqlite3": "^5.0.2",
     "jsonexport": "^3.2.0"
   }
 }
