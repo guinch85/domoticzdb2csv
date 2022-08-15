@@ -1,20 +1,134 @@
-//let dbfile = "/home/ouvrardg/WebstormProjects/domoticzdb2csv/domoticz.db";
-let dbfile = "/home/pi/domoticz/domoticz.db";
-let csvMeterFileName = "domoticzMeterExport.csv";
-let csvTempFileName = "domoticzTempExport.csv";
-let csvHygroFileName = "domoticzHygroExport.csv";
-
-let listIdxMeter = [125, 126, 127, 128, 1543, 1544, 1545];
-//Amperage, HC, HP, Power
-
-let listIdxTemp = [458, 484, 546, 1548, 943, 944, 951, 952, 953, 954, 1546, 1547, 1036, 1037];
-// Extérieure, Chambre 1, Chambre 2, Garage,
+let dbFile = "domoticz.db";
+// let dbFile = "/home/pi/domoticz/domoticz.db";
+let csvMeterFilePrefix = "domoticzMeter";
+let csvTempFilePrefix = "domoticzTemp";
+let csvHygroFilePrefix = "domoticzHygro";
+let ftpConfig = {
+    host: "192.168.85.6",
+    port: 21,
+    user: 'Home',
+    password: 'ludi2400'
+}
+let idxTable = [
+    // RaspEDF
+    {
+        idx: 125,
+        name: "EDF - Ampère",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 126,
+        name: "EDF - Heures creuses",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 127,
+        name: "EDF - Heures pleines",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 128,
+        name: "EDF - Puissance",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    //RfxCom
+    {
+        idx: 1558,
+        name: "Chambre 2",
+        table: "Temperature",
+        sensor: "Temp+Hr"
+    },
+    {
+        idx: 1561,
+        name: "Garage",
+        table: "Temperature",
+        sensor: "Temp+Hr"
+    },
+    {
+        idx: 1562,
+        name: "Exterieure",
+        table: "Temperature",
+        sensor: "Temp+Hr"
+    },
+    {
+        idx: 1563,
+        name: "Chambre 1",
+        table: "Temperature",
+        sensor: "Temp+Hr"
+    },
+    //Jeedom home
+    {
+        idx: 943,
+        name: "Température bureau",
+        table: "Temperature",
+        sensor: "Temp"
+    },
+    {
+        idx: 944,
+        name: "Hygrométrie bureau",
+        table: "Temperature",
+        sensor: "Hygro"
+    },
+    {
+        idx: 951,
+        name: "Température salle de bain",
+        table: "Temperature",
+        sensor: "Temp"
+    },
+    {
+        idx: 952,
+        name: "Hygrométrie salle de bain",
+        table: "Temperature",
+        sensor: "Hygro"
+    },
+    {
+        idx: 953,
+        name: "Température cuisine",
+        table: "Temperature",
+        sensor: "Temp"
+    },
+    {
+        idx: 954,
+        name: "Hygrométrie cuisine",
+        table: "Temperature",
+        sensor: "Hygro"
+    },
+    {
+        idx: 1546,
+        name: "Température salon",
+        table: "Temperature",
+        sensor: "Temp"
+    },
+    {
+        idx: 1547,
+        name: "Hygrométrie salon",
+        table: "Temperature",
+        sensor: "Hygro"
+    },
+    //Jeedom extension
+    {
+        idx: 1036,
+        name: "Température extension 1",
+        table: "Temperature",
+        sensor: "Temp"
+    },
+    {
+        idx: 1037,
+        name: "Hygrométrie extension 1",
+        table: "Temperature",
+        sensor: "Hygro"
+    }
+]
 
 module.exports = {
-    dbfile,
-    csvMeterFileName,
-    csvTempFileName,
-    csvHygroFileName,
-    listIdxMeter,
-    listIdxTemp
+    ftpConfig,
+    idxTable,
+    dbFile,
+    csvMeterFilePrefix,
+    csvTempFilePrefix,
+    csvHygroFilePrefix
 };
