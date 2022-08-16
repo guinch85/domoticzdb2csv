@@ -2,6 +2,7 @@ let config = require('./config');
 let sq = require('sqlite3');
 let jsonExport = require('jsonexport');
 const fs = require('fs');
+const path = require('path')
 const FTPClient = require('ftp');
 
 sq.verbose();
@@ -75,16 +76,18 @@ let start = function () {
         ftpClient.connect(config.ftpConfig);
 
         ftpClient.on('ready', function () {
-            fs.readdir('export', function (err, files) {
+            const exportPath = path.join(__dirname, '/export');
+            fs.readdir(exportPath, function (err, files) {
                 if (err) console.log(err);
                 else {
-                    for (let f = 0; f < files.length; f++) {
-                        let file = files[f];
+                    let csvFiles = files.filter(el => path.extname(el) === '.csv');
+                    for (let f = 0; f < csvFiles.length; f++) {
+                        let file = csvFiles[f];
                         // console.log(file);
                         ftpClient.put('export/' + file, file, function (err) {
                             if (err) console.log(err);
                             console.log("File " + file + " sent successfully");
-                            if (f === files.length - 1) ftpClient.end();
+                            if (f === csvFiles.length - 1) ftpClient.end();
                         });
                     }
                 }
