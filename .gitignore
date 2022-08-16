@@ -1,4 +1,4 @@
-test
+export/*.csv
 domoticz.db
 domoticz.db-shm
 domoticz.db-wal
