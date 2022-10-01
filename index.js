@@ -22,45 +22,49 @@ let start = function () {
                 if (err) {
                     reject(err);
                 } else {
-                    if (item.sensor === "Counter") {
-                        const exportCsv = new Promise((resolve, reject) => {
-                            jsonExport(rows, (err, csv) => {
-                                if (err) reject(err);
-                                fs.writeFileSync('./export/' + config.csvMeterFilePrefix + rows[0].DeviceRowID + ".csv", csv)
-                                // console.log("CSV file " + item.name + " ready!");
-                                resolve();
-                            })
-                        });
-                        promiseList.push(exportCsv);
-                    }
-                    if (item.sensor === "Temp" || item.sensor === "Temp+Hr") {
-                        const exportCsv = new Promise((resolve, reject) => {
-                            jsonExport(rows, (err, csv) => {
-                                if (err) reject(err);
-                                fs.writeFileSync('./export/' + config.csvTempFilePrefix + rows[0].DeviceRowID + ".csv", csv)
-                                // console.log("CSV file " + item.name + " ready!");
-                                resolve();
-                            })
-                        });
-                        promiseList.push(exportCsv);
-                    }
-                    if (item.sensor === "Hygro" || item.sensor === "Temp+Hr") {
-                        for (let j in rows) {
-                            let id = rows[j].DeviceRowID;
-                            rows[j].DeviceRowID = id + '_Hr';
+                    if (rows.length > 0) {
+                        if (item.sensor === "Counter") {
+                            const exportCsv = new Promise((resolve, reject) => {
+                                jsonExport(rows, (err, csv) => {
+                                    if (err) reject(err);
+                                    fs.writeFileSync('./export/' + config.csvMeterFilePrefix + rows[0].DeviceRowID + ".csv", csv)
+                                    // console.log("CSV file " + item.name + " ready!");
+                                    resolve();
+                                })
+                            });
+                            promiseList.push(exportCsv);
                         }
-                        const exportCsv = new Promise((resolve, reject) => {
-                            jsonExport(rows, (err, csv) => {
-                                if (err) reject(err);
-                                fs.writeFileSync('./export/' + config.csvHygroFilePrefix + rows[0].DeviceRowID + ".csv", csv)
-                                // console.log("CSV file " + item.name + " ready!");
-                                resolve();
-                            })
-                        });
-                        promiseList.push(exportCsv);
+                        if (item.sensor === "Temp" || item.sensor === "Temp+Hr") {
+                            const exportCsv = new Promise((resolve, reject) => {
+                                jsonExport(rows, (err, csv) => {
+                                    if (err) reject(err);
+                                    fs.writeFileSync('./export/' + config.csvTempFilePrefix + rows[0].DeviceRowID + ".csv", csv)
+                                    // console.log("CSV file " + item.name + " ready!");
+                                    resolve();
+                                })
+                            });
+                            promiseList.push(exportCsv);
+                        }
+                        if (item.sensor === "Hygro" || item.sensor === "Temp+Hr") {
+                            for (let j in rows) {
+                                let id = rows[j].DeviceRowID;
+                                rows[j].DeviceRowID = id + '_Hr';
+                            }
+                            const exportCsv = new Promise((resolve, reject) => {
+                                jsonExport(rows, (err, csv) => {
+                                    if (err) reject(err);
+                                    fs.writeFileSync('./export/' + config.csvHygroFilePrefix + rows[0].DeviceRowID + ".csv", csv)
+                                    // console.log("CSV file " + item.name + " ready!");
+                                    resolve();
+                                })
+                            });
+                            promiseList.push(exportCsv);
+                        }
+
+                    } else {
+                        console.log("No data for item");
+                        console.log(item)
                     }
-
-
                 }
                 resolve();
             })
