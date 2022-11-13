@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sqlite3": "^5.1.1",
+    "sqlite3": "^5.1.2",
     "jsonexport": "^3.2.0",
     "ftp": "^0.3.10"
   }

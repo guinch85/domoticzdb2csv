@@ -4,6 +4,7 @@ domoticz.db-shm
 domoticz.db-wal
 .idea
 package-lock.json
+yarn.lock
 
 # Logs
 logs
