@@ -35,6 +35,26 @@ let idxTable = [
         table: "Meter",
         sensor: "Counter"
     },
+    {
+        idx: 1572,
+        name: "TD - Général",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 1571,
+        name: "TD - Chaudière",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 1570,
+        name: "TD - ECS",
+        table: "Meter",
+        sensor: "Counter"
+    },
+
+
     //RfxCom
     {
         idx: 1558,
