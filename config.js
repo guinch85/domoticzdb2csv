@@ -53,6 +53,18 @@ let idxTable = [
         table: "Meter",
         sensor: "Counter"
     },
+    {
+        idx: 1575,
+        name: "Onduleur - Puissance",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 1576,
+        name: "Onduleur - Energie",
+        table: "Meter",
+        sensor: "Counter"
+    },
 
 
     //RfxCom
