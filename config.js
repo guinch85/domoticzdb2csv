@@ -60,7 +60,7 @@ let idxTable = [
         sensor: "Counter"
     },
     {
-        idx: 1576,
+        idx: 1580,
         name: "Onduleur - Energie",
         table: "Meter",
         sensor: "Counter"
