@@ -36,20 +36,20 @@ let idxTable = [
         sensor: "Counter"
     },
     {
-        idx: 1572,
-        name: "TD - Général",
+        idx: 1570,
+        name: "Départ ballon ECS",
         table: "Meter",
         sensor: "Counter"
     },
     {
         idx: 1571,
-        name: "TD - Chaudière",
+        name: "Départ chaudière",
         table: "Meter",
         sensor: "Counter"
     },
     {
-        idx: 1570,
-        name: "TD - ECS",
+        idx: 1572,
+        name: "Départ PC bureau",
         table: "Meter",
         sensor: "Counter"
     },
@@ -65,6 +65,37 @@ let idxTable = [
         table: "Meter",
         sensor: "Counter"
     },
+    {
+        idx: 1581,
+        name: "Général PC",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 1582,
+        name: "Général ECL",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 1583,
+        name: "Général Plaque",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 1584,
+        name: "Départ VMC",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 1585,
+        name: "Départ baie info",
+        table: "Meter",
+        sensor: "Counter"
+    },
+
 
 
     //RfxCom
