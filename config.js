@@ -95,6 +95,12 @@ let idxTable = [
         table: "Meter",
         sensor: "Counter"
     },
+    {
+        idx: 1587,
+        name: "Ext - Général PC",
+        table: "Meter",
+        sensor: "Counter"
+    },
 
 
 
