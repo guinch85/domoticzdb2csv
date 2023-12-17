@@ -106,12 +106,6 @@ let idxTable = [
 
     //RfxCom
     {
-        idx: 1558,
-        name: "Chambre 2",
-        table: "Temperature",
-        sensor: "Temp+Hr"
-    },
-    {
         idx: 1561,
         name: "Garage",
         table: "Temperature",
@@ -123,61 +117,47 @@ let idxTable = [
         table: "Temperature",
         sensor: "Temp+Hr"
     },
+
+
+    //Zigbee
     {
-        idx: 1563,
-        name: "Chambre 1",
+        idx: 1599,
+        name: "Capteur bureau",
         table: "Temperature",
         sensor: "Temp+Hr"
     },
-    //Jeedom home
     {
-        idx: 943,
-        name: "Température bureau",
+        idx: 1605,
+        name: "Capteur chambre 1",
         table: "Temperature",
-        sensor: "Temp"
+        sensor: "Temp+Hr"
     },
     {
-        idx: 944,
-        name: "Hygrométrie bureau",
+        idx: 1606,
+        name: "Capteur chambre 2",
         table: "Temperature",
-        sensor: "Hygro"
+        sensor: "Temp+Hr"
     },
     {
-        idx: 951,
-        name: "Température salle de bain",
+        idx: 1602,
+        name: "Capteur cuisine",
         table: "Temperature",
-        sensor: "Temp"
+        sensor: "Temp+Hr"
     },
     {
-        idx: 952,
-        name: "Hygrométrie salle de bain",
+        idx: 1603,
+        name: "Capteur salle de bain",
         table: "Temperature",
-        sensor: "Hygro"
+        sensor: "Temp+Hr"
     },
     {
-        idx: 953,
-        name: "Température cuisine",
+        idx: 1598,
+        name: "Capteur salon",
         table: "Temperature",
-        sensor: "Temp"
+        sensor: "Temp+Hr"
     },
-    {
-        idx: 954,
-        name: "Hygrométrie cuisine",
-        table: "Temperature",
-        sensor: "Hygro"
-    },
-    {
-        idx: 1546,
-        name: "Température salon",
-        table: "Temperature",
-        sensor: "Temp"
-    },
-    {
-        idx: 1547,
-        name: "Hygrométrie salon",
-        table: "Temperature",
-        sensor: "Hygro"
-    },
+
+
     //Jeedom extension
     {
         idx: 1036,
