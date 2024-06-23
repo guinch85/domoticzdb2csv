@@ -106,13 +106,13 @@ let idxTable = [
 
     //RfxCom
     {
-        idx: 1561,
+        idx: 1628,
         name: "Garage",
         table: "Temperature",
         sensor: "Temp+Hr"
     },
     {
-        idx: 1562,
+        idx: 1627,
         name: "Exterieure",
         table: "Temperature",
         sensor: "Temp+Hr"
@@ -160,17 +160,12 @@ let idxTable = [
 
     //Jeedom extension
     {
-        idx: 1036,
-        name: "Température extension 1",
+        idx: 1607,
+        name: "Capteur extension",
         table: "Temperature",
-        sensor: "Temp"
+        sensor: "Temp+Hr"
     },
-    {
-        idx: 1037,
-        name: "Hygrométrie extension 1",
-        table: "Temperature",
-        sensor: "Hygro"
-    }
+
 ]
 
 module.exports = {
