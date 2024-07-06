@@ -36,12 +36,6 @@ let idxTable = [
         sensor: "Counter"
     },
     {
-        idx: 1570,
-        name: "Départ ballon ECS",
-        table: "Meter",
-        sensor: "Counter"
-    },
-    {
         idx: 1571,
         name: "Départ chaudière",
         table: "Meter",
@@ -102,7 +96,18 @@ let idxTable = [
         sensor: "Counter"
     },
 
-
+    {
+        idx: 1630,
+        name: "Chauffe-eau - Puissance",
+        table: "Meter",
+        sensor: "Counter"
+    },
+    {
+        idx: 1632,
+        name: "Chauffe-eau - Energie",
+        table: "Meter",
+        sensor: "Counter"
+    },
 
     //RfxCom
     {
