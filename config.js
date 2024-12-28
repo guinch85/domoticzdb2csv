@@ -111,13 +111,13 @@ let idxTable = [
 
     //RfxCom
     {
-        idx: 1628,
+        idx: 1637,
         name: "Garage",
         table: "Temperature",
         sensor: "Temp+Hr"
     },
     {
-        idx: 1627,
+        idx: 1636,
         name: "Exterieure",
         table: "Temperature",
         sensor: "Temp+Hr"
